@@ -1,0 +1,33 @@
+> use assignment 
+switched to db assignment
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> use assignment
+switched to db assignment
+> db
+assignment
+> db.createCollection("users")
+{ "ok" : 1 }
+> db.users.insert({"first_name":"Raju","last_name":"Raj","email":"raju@itus.com","gender":"Male","ip_address":"122.162.148.237","age":"29"})
+WriteResult({ "nInserted" : 1 })
+> db.users.find({})
+{ "_id" : ObjectId("622cbb86e570873050660be6"), "first_name" : "Raju", "last_name" : "Raj", "email" : "raju@itus.com", "gender" : "Male", "ip_address" : "122.162.148.237", "age" : "29" }
+> db.users.find({}).pretty()
+{
+        "_id" : ObjectId("622cbb86e570873050660be6"),
+        "first_name" : "Raju",
+        "last_name" : "Raj",
+        "email" : "raju@itus.com",
+        "gender" : "Male",
+        "ip_address" : "122.162.148.237",
+        "age" : "29"
+}
+> db.users.insertMany({"first_name":"Shyam","last_name":"Saha","email":"shyam@annu.com","gender":"Male","ip_address":"122.162.148.238","age":"32"},{"first_name":"Anuradha","last_name":"Lakshmi","email":"anuradha@laxmicheatfund.com","gender":"Female","ip_address":"122.162.148.239","age":"23"},{"first_name":"Babu","last_name":"Bhaiya","email":"babu@bhaiya.com","gender":"Male","ip_address":"122.162.148.247","age":"55"},{"first_name":"Raju","last_name":"Raj","email":"raju@itus.com","gender":"Male","ip_address":"122.162.148.237","age":"29"},{"first_name":"Raju","last_name":"Raj","email":"raju@itus.com","gender":"Male","ip_address":"122.162.148.237","age":"29"},{"first_name":"Raju","last_name":"Raj","email":"raju@itus.com","gender":"Male","ip_address":"122.162.148.237","age":"29"},{"first_name":"Raju","last_name":"Raj","email":"raju@itus.com","gender":"Male","ip_address":"122.162.148.237","age":"29"},{"first_name":"Raju","last_name":"Raj","email":"raju@itus.com","gender":"Male","ip_address":"122.162.148.237","age":"29"},{"first_name":"Raju","last_name":"Raj","email":"raju@itus.com","gender":"Male","ip_address":"122.162.148.239","age":"23"})
+>
+>
+>db.users.find({}).pretty()
+>
+>
+>db.dropDatabase()
